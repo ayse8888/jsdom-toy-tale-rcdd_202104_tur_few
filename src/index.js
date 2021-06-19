@@ -59,5 +59,20 @@ function renderToys(toys) {
       return parseInt(p.innerText ++)
     })
   });
+
+const tosyCollection = document.querySelector("#toy-collection")
+const cardDiv = document.createElement("div")
+cardDiv.setAttribute("class", "card")
+// cardDiv.innerText = "ayse"
+tosyCollection.append(cardDiv)
+
+const URL = "db.json"
+
+fetch(URL)
+.then(response => response.json())
+.then(data => console.log(fetchData(data)))
+
+const fetchData = data => {
+  console.log(data.toys)
 }
 
